@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "464954996189",
+    "project_id": "mybalance-ddf4d",
+    "storage_bucket": "mybalance-ddf4d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:464954996189:android:a724dc32c63456e0163234",
+        "android_client_info": {
+          "package_name": "com.shameem.mybalance"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-lnCZq1804I8q9FySbJGQzCv7bbTFk7A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
