@@ -117,6 +117,10 @@ public class SignupActivity extends AppCompatActivity {
                                                         progressBar.setVisibility(View.GONE);
                                                         Log.i(TAG, "successful");
                                                         Toast.makeText(SignupActivity.this, "User data stored in Firestore", Toast.LENGTH_SHORT).show();
+                                                        //redirect to login
+                                                        finish();
+                                                        Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+                                                        startActivity(intent);
                                                     }
                                                 })
                                                 .addOnFailureListener(new OnFailureListener() {
