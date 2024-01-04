@@ -80,9 +80,13 @@ public class LoginActivity extends AppCompatActivity {
                                                         if (document.exists()) {
                                                             Log.i(TAG, "DocumentSnapshot data: " + document.getData());
                                                             progressBar.setVisibility(View.GONE);
+                                                            String userName = document.getString("name");
+                                                            String userPhone = document.getString("phone");
                                                             finish();
                                                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                                             intent.putExtra("email", email);
+                                                            intent.putExtra("name", userName);
+                                                            intent.putExtra("phone", userPhone);
                                                             startActivity(intent);
                                                         } else {
                                                             Log.i(TAG, "No such document");

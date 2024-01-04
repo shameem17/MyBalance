@@ -20,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
         balanceView = findViewById(R.id.balance);
         Intent intent = getIntent();
         String email = intent.getStringExtra("email");
+        String name = intent.getStringExtra("name");
+        String phone = intent.getStringExtra("phone");
         emailView.setText(email);
+        nameView.setText(name);
     }
 }

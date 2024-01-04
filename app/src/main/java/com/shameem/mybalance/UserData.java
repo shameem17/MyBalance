@@ -4,10 +4,10 @@ public class UserData {
     String name;
     String phoneNumber;
     String createdAt;
+    String uid;
+    String balance;
+    String email;
 
-    public UserData(String name, String phoneNumber, String createdAt) {
-        this.name = name;
-        this.phoneNumber = phoneNumber;
-        this.createdAt = createdAt;
-    }
+
+
 }
