@@ -68,7 +68,8 @@ public class LoginActivity extends AppCompatActivity {
                                             // Sign in success, update UI with the signed-in user's information
                                             FirebaseUser user = auth.getCurrentUser();
                                             //progressBar.setVisibility(View.GONE);
-                                            Toast.makeText(LoginActivity.this,"Log in Successful: "+user.getUid(), Toast.LENGTH_SHORT).show();
+                                            String uid = user.getUid();
+//                                            Toast.makeText(LoginActivity.this,"Log in Successful: "+user.getUid(), Toast.LENGTH_SHORT).show();
 
                                             FirebaseFirestore db = FirebaseFirestore.getInstance();
                                             DocumentReference docRef = db.collection("users").document(user.getUid());
@@ -82,11 +83,16 @@ public class LoginActivity extends AppCompatActivity {
                                                             progressBar.setVisibility(View.GONE);
                                                             String userName = document.getString("name");
                                                             String userPhone = document.getString("phone");
+                                                            String createdAt = document.getString("createdAt");
+                                                            UserData userData = UserData.getInstance();
+                                                            userData.balance = "0";
+                                                            userData.phoneNumber = userPhone;
+                                                            userData.name = userName;
+                                                            userData.createdAt = createdAt;
+                                                            userData.email = email;
+                                                            userData.uid = uid;
                                                             finish();
                                                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                                                            intent.putExtra("email", email);
-                                                            intent.putExtra("name", userName);
-                                                            intent.putExtra("phone", userPhone);
                                                             startActivity(intent);
                                                         } else {
                                                             Log.i(TAG, "No such document");

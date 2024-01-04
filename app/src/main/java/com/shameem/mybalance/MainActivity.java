@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.google.firebase.firestore.auth.User;
+
 public class MainActivity extends AppCompatActivity {
 
     TextView nameView, emailView, balanceView;
@@ -18,10 +20,14 @@ public class MainActivity extends AppCompatActivity {
         nameView = findViewById(R.id.name);
         emailView = findViewById(R.id.email);
         balanceView = findViewById(R.id.balance);
-        Intent intent = getIntent();
-        String email = intent.getStringExtra("email");
-        String name = intent.getStringExtra("name");
-        String phone = intent.getStringExtra("phone");
+
+        UserData userData = UserData.getInstance();
+
+        String email = userData.email;
+        String name = userData.name;
+        String phone = userData.phoneNumber;
+        String balance = userData.balance;
+        balanceView.setText(balance);
         emailView.setText(email);
         nameView.setText(name);
     }
